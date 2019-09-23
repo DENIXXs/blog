@@ -1,0 +1,10 @@
+<h1>List of Artilce</h1>
+<%@article.each do |article|%>
+	<h2><%=article.title%></h2>
+	<p>
+		<%=article.text%>
+	</p>
+	<%= link_to "Show text #{article.id}", article_path(article)%>
+	<%= link_to "Edit", edit_article_path(article)%>
+	<hr>
+<%end%>
