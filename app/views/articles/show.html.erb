@@ -1,8 +1,23 @@
+
+<style type="text/css">
+	.color { color: red }
+</style>
+
 <h1><%= @article.title%></h1>
 <p>
 	<%=@article.text%>
 </p>
 <%= link_to 'Home', articles_path%>
+<p>
+	<br>
+	<br>
+	<p class = "color">You Comments</p>
+	
+	<%@article.comments.each do |article|%>
+	<%=article.author%><br>
+	<%=article.body%><br>
+	------------------------------------<br>
+	<%end%>
 <p>
 <%= form_for ([@article, @article.comments.build]) do |f|%> <br>
 	
