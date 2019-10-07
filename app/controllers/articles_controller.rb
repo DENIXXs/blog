@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+	include Devise::Controllers::Helpers
 	  # before_filter :authenticate_user!
 
 	def about
