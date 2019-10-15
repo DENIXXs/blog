@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
-	before_filter :configure_permitted_parameters, if: :devise_controller?
+	 before_action :configure_permitted_parameters, if: :devise_controller?
 
 	private
 
 	def configure_permitted_parameters
-		devise_parameters_sanitizer.for(:sig_up) << :username
+		devise_parameter_sanitizer.permit(:sign_up,keys: [:username])
 	end
 end
